@@ -13,6 +13,17 @@
 	
 	//check if POST request is made(via normal for submission or ajax)
 	if($_POST){
+		
+		//insert record
+		insert_record();
+		
+	}//end if post
+	
+	/*function to insert data in table*/
+	function insert_record(){
+		//access $db inside function
+		global $db;
+
 		//collect post variable data
 		$name = clean($_POST['txtName']);
 		$email = clean($_POST['txtEmail']);
@@ -31,14 +42,12 @@
 		//echo $qry; /*debug qry*/
 		
 		if($result = $db->query($qry)){
-			echo 'Message sent successfully, we will get intouch with you soon.';
+			echo 'Message sent successfully, we will process it soon.';
 		}else{
 			echo $db->error;
 		}
-		
-		
-		
-	}//end if post
+	}//end insert_record()
+	
 	
 	/*function to escape special chars
 	to prevent sql injection	*/
