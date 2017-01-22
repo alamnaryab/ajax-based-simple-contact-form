@@ -1,4 +1,9 @@
 $(function(){
+	$('#refresh-captcha').click(function(e){
+		e.preventDefault();
+		var d = new Date();
+		$('#img-captcha').attr('src','captcha.php?'+d.getTime());
+	});
 	$('#contact-frm').submit(function(e){
 		//prevent default fuctionality of form submision
 		e.preventDefault();
@@ -13,14 +18,19 @@ $(function(){
 				txtCompany:	$('#txtCompany').val().trim(),
 				txtPhone  :	$('#txtPhone').val().trim(),
 				txtMessage:	$('#txtMessage').val().trim(),
+				txtCaptcha:	$('#txtCaptcha').val().trim(),
 			},
 			beforeSend:function(){
 				display_msg('Wait: Processing','info');
 			},
 			success:function(response){
-				display_msg(response,'success');
-				//reset form inputs
-				$('#contact-frm')[0].reset();
+				if(response.toLowerCase().indexOf('error')>=0){
+					display_msg(response,'danger');
+				}else{
+					display_msg(response,'success');
+					//reset form inputs
+					$('#contact-frm')[0].reset();
+				}
 			},
 			error:function(){
 				display_msg('Some error occured','danger');

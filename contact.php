@@ -60,6 +60,22 @@
 						</div><!--.col-->
 					</div><!--.row-->
 					
+<div class="row">
+	<div class="col-xs12 col-sm-3 col-md-2">
+		<img id="img-captcha" alt="alt" src="captcha.php" />
+	</div><!--.col-->
+	<div class="col-xs12 col-sm-3 col-md-2">
+		<label for="txtCaptcha">Enter Captcha</label>
+	</div><!--.col-->
+	<div class="col-xs12 col-sm-3 col-md-2">
+		<div class="form-group">
+			<input type="text" id="txtCaptcha" name="txtCaptcha" class="txt form-control" required placeholder="Enter captcha" />
+		</div>
+	</div><!--.col-->
+	<div class="col-xs12 col-sm-3 col-md-6">
+		<button id="refresh-captcha" class="btn btn-info btn-xs">Try another captcha</button>
+	</div><!--.col-->
+</div><!--.row-->
 					
 					<div class="row">
 						<div class="col-xs12 col-sm-6">

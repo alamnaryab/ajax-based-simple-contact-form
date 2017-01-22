@@ -1,4 +1,5 @@
 <?php
+session_start();
 	//connect to database
 	$db_host = "localhost";
     $db_user = "root";
@@ -13,9 +14,12 @@
 	
 	//check if POST request is made(via normal for submission or ajax)
 	if($_POST){
-		
-		//insert record
-		insert_record();
+		if($_SESSION['alam_captcha']==$_POST['txtCaptcha']){
+			//insert record
+			insert_record();
+		}else{
+			echo 'ERROR: Invalid captcha entered.';
+		}
 		
 	}//end if post
 	
@@ -44,7 +48,7 @@
 		if($result = $db->query($qry)){
 			echo 'Message sent successfully, we will process it soon.';
 		}else{
-			echo $db->error;
+			echo 'ERROR : '. $db->error;
 		}
 	}//end insert_record()
 	
