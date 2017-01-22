@@ -30,6 +30,7 @@ $(function(){
 					display_msg(response,'success');
 					//reset form inputs
 					$('#contact-frm')[0].reset();
+                                        $('#refresh-captcha').trigger('click');
 				}
 			},
 			error:function(){
