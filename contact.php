@@ -18,7 +18,7 @@
 		<h1 class="text-center">Ajax based simple contact form</h1>
 		<p class="text-center small">This is Demo by Alam. Visit <a href="http://www.codingsips.com">Coding Sips</a> for more Coding tips</p>
 		<div class="jumbotron">
-			<a class="label label-info pull-right" href="http://www.codingsips.com/generate-qr-code-easily-one-line-php/" target="_blank">Tutorial: Ajax based contact form</a>
+			<a class="label label-info pull-right" href="http://www.codingsips.com/ajax-based-simple-contact-form-captcha/" target="_blank">Tutorial: Ajax based contact form</a>
 			<br>
 				<form action="save-contact.php" method="POST" id="contact-frm">
 					<div class="row">
