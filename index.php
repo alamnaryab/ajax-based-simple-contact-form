@@ -20,7 +20,7 @@
 		<div class="jumbotron">
 			<a class="label label-info pull-right" href="http://www.codingsips.com/generate-qr-code-easily-one-line-php/" target="_blank">Tutorial: Ajax based contact form</a>
 			<br>
-				<form>
+				<form action="save-contact.php" method="POST" id="contact-frm">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6">
 							<div class="form-group">
